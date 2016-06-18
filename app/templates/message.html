@@ -1,0 +1,48 @@
+<div class="container">
+<fieldset class="panel-body animated rubberBand firstSection">
+  <h4> <span class="highlighth4">Get in Touch </span> </br></h4>
+  <div class="col-xs-5">
+    <div class="checkbox checkbox-slider--c-weight checkbox-slider-md"> 
+      <label>
+      <input 
+        ng-model="HomeFactory.model.isVisiting"
+        type="checkbox"><span><strong>Planning a visit?</strong></span>
+      </label>
+    </div>
+    <div class="form-group">
+      <input 
+        class="form-control" 
+        id="name"
+        ng-model="HomeFactory.model.name"
+        placeholder="Name">
+    </div>
+    <div class="form-group">
+      <input 
+       class="form-control" 
+       id="email"
+       ng-model="HomeFactory.model.email"
+       placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input 
+       class="form-control"  
+       id="phoneNumber"
+       ng-model="HomeFactory.model.phoneNumber"
+       placeholder="Phone number">
+    </div>
+    <span><strong> Message </strong></span>
+    <div>
+      <textarea rows="4" cols="50">
+      </textarea>
+    </div>
+    <div>
+      <button  
+        class="btn btn-primary" 
+        ng-click="HomeFactory.contactSubmit()">submit</button> 
+    <div ng-if="HomeFactory.model.contactSubmitted" 
+         class="well" 
+         ng-include="'templates/info1.html'"></div>
+    </div>
+  </div>
+</fieldset>
+</div>

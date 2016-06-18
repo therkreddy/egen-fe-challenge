@@ -1,0 +1,29 @@
+{
+  "name": "agrotech",
+  "description": "The application for agrotech.",
+  "main": "gulpfile.js",
+  "authors": [
+    "therkreddy <ursrkreddy@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "app/bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "jquery": "^2.2.4",
+    "animate.css": "^3.5.2",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "^0.3.1",
+    "titatoggle": "^1.2.9"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "agrotech",
+  "version": "1.0.0",
+  "description": "The application for agrotech.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rk R Bairi",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.0.0",
+    "gulp-open": "^2.0.0",
+    "run-sequence": "^1.2.1"
+  },
+  "devDependencies": {}
+}

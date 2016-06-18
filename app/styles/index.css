@@ -1,0 +1,62 @@
+body {
+    background-color: white;
+}
+
+.firstSection{
+	background-image: url('../images/farmwall.jpg');
+	background-size: cover;
+    height: auto;
+    width: auto;
+}
+
+.header{
+	background-color: #F8F8FF;
+}
+
+.btn:hover, .navbtn:hover, .btn:focus, .navbtn:focus, .btn:active , navbtn:active{
+  background-color: #ff6600;
+  color:white;
+}
+
+.btn{
+	background-color:white;
+	color:#ff6600;
+}
+
+.btn-primary{
+	color:#ff6600;
+}
+
+.btn-success {
+	color:#ff6600;
+}
+
+.navbtn{
+	color:#ff6600;
+}
+
+p.info{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+img.gifimage{
+	height: 60%;
+	width: 20%;
+    border:1px solid gray;
+}
+
+span.highlight {
+	color: #ff6600;
+	background-color: white;
+	font-size: 15;
+}
+
+span.highlighth4 {
+	color: 	#ff6600;
+	font-size: 20;
+}
+
+span.highlighth1 {
+	color: 	#ff6600;
+}
