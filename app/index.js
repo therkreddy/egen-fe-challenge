@@ -17,6 +17,17 @@
           templateUrl: './templates/message.html',
           controller: 'HomeController',
         })
+         .state('users', {
+                  url: '/users',
+          templateUrl: './templates/users.html',
+          controller: 'UserController',
+        })
     }
   ]);
+
+  app.constant('_', window._);
+
+  app.run(function($rootScope) {
+    $rootScope._ = window._;
+  });
 
