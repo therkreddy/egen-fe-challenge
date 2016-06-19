@@ -1,5 +1,7 @@
 <div class="container">
-<form name="userForm" novalidate class="panel-body animated rubberBand">
+<form name="userForm" novalidate 
+      ng-submit="userForm.$valid && HomeFactory.contactSubmit()"
+      class="panel-body animated rubberBand">
   <h4> <span class="highlighth4">Get in Touch </span> </br></h4>
   <div class="col-xs-5">
     <div class="checkbox checkbox-slider--c-weight checkbox-slider-md"> 
@@ -10,11 +12,19 @@
       </label>
     </div>
     <div class="form-group">
-      <input 
-        class="form-control" 
-        id="name"
-        ng-model="HomeFactory.model.name"
-        placeholder="Name">
+      <input type="name" name="name" class="form-control" 
+                ng-model="HomeFactory.model.name"
+                ng-minlength="5"
+                ng-maxlength="20"
+                placeholder="name"
+                required>
+                <div class="customError" 
+                     ng-messages="userForm.name.$error" 
+                     ng-if="userForm.name.$touched || userForm.$submitted">
+                    <p ng-message="minlength">Your name is too short.</p> 
+                    <p ng-message="maxlength">Your name is too long.</p>
+                    <p ng-message="required">Your name is required.</p>
+                </div>
     </div>
     <div class="form-group">
       <input type="email" name="email" class="form-control" 
@@ -23,10 +33,12 @@
                 ng-maxlength="20"
                 placeholder="Email"
                 required>
-                <div style="color:red" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
-                    <p ng-message="minlength">Your name is too short.</p> 
-                    <p ng-message="maxlength">Your name is too long.</p>
-                    <p ng-message="required">Your name is required.</p>
+                <div class="customError" 
+                     ng-messages="userForm.email.$error" 
+                     ng-if="userForm.email.$touched || userForm.$submitted">
+                    <p ng-message="minlength">Your Email is too short.</p> 
+                    <p ng-message="maxlength">Your Email is too long.</p>
+                    <p ng-message="required">Your Email is required.</p>
                 </div>
     </div>
     <div class="form-group">
@@ -43,8 +55,8 @@
     </div>
     <div>
       <button  
-        class="btn btn-info" 
-        ng-click="HomeFactory.contactSubmit()">submit</button> 
+        class="btn btn-info" >submit
+      </button> 
     <div ng-if="HomeFactory.model.contactSubmitted" 
          class="well" 
          ng-include="'templates/info1.html'"></div>

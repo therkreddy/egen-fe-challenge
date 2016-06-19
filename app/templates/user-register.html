@@ -11,33 +11,62 @@
   </div>        
 </div>
 <div ng-switch-when="userFormShowing" class="panel-body container userSection">
-  <fieldset class="panel-body animated rubberBand">
-  <div class="col-xs-8 form-group">
+  <form name="userForm" novalidate 
+        ng-submit="userForm.$valid && UserFactory.submitUser()"
+        class="panel-body animated rubberBand">
+  <div class="col-xs-8">
     <div class="row">
-	    <div class="col-md-6">
+	    <div class="col-md-6 form-group">
 	      <label class="toOrange">First Name</label> <small class="toOrange"> *</small>
 	      <input 
 	        class="form-control" 
+	        name="firstName"
 	        id="firstname"
 	        ng-model="UserFactory.model.firstName"
-	        placeholder="First Name">
+	        placeholder="First Name"
+	        ng-minlength="6"
+            ng-maxlength="15"
+            required>
+            <div class="customError" 
+                 ng-if="userForm.firstName.$touched || userForm.$submitted" 
+                 ng-messages="userForm.firstName.$error">
+              <div ng-messages-include="templates/ng-messages.html"></div>
+            </div>
 	    </div>
-	    <div class="col-md-6">
+	    <div class="col-md-6 form-group">
 	      <label class="toOrange">Last Name</label> <small class="toOrange"> *</small>
 	      <input 
-	       class="form-control" 
-	       id="lastName"
-	       ng-model="UserFactory.model.lastName"
-	       placeholder="Last Name">
+	        class="form-control" 
+	        name="lastName"
+	        id="lastName"
+	        ng-model="UserFactory.model.lastName"
+	        placeholder="Last Name"
+	        ng-minlength="6"
+            ng-maxlength="15"
+            required>
+            <div class="customError" 
+                 ng-if="userForm.lastName.$touched || userForm.$submitted" 
+                 ng-messages="userForm.lastName.$error">
+              <div ng-messages-include="templates/ng-messages.html"></div>
+            </div>
 	    </div>
 	    <div>&nbsp;</div>
-	<div class="col-md-12">
+	<div class="col-md-12 form-group">
 	      <label class="toOrange">Email</label> <small class="toOrange"> *</small>
 	      <input 
 	       class="form-control" 
+	       name="email"
 	       id="Email"
 	       ng-model="UserFactory.model.email"
-	       placeholder="Email">
+	       placeholder="Email"
+	       ng-minlength="6"
+           ng-maxlength="15"
+           required>
+	       <div class="customError" 
+	            ng-if="userForm.email.$touched || userForm.$submitted" 
+	            ng-messages="userForm.email.$error">
+              <div ng-messages-include="templates/ng-messages.html"></div>
+           </div>
 	</div> 
 	<div>&nbsp;</div>	
 	   <div class="col-md-6">
@@ -48,22 +77,40 @@
 	        ng-model="UserFactory.model.street"
 	        placeholder="First Name">
 	    </div>
-	    <div class="col-md-6">
+	    <div class="col-md-6 form-group">
 	      <label class="toOrange">City</label> <small class="toOrange"> *</small>
 	      <input 
 	       class="form-control" 
+	       name="city"
 	       id="city"
 	       ng-model="UserFactory.model.city"
-	       placeholder="City">
+	       placeholder="City"
+	       ng-minlength="6"
+           ng-maxlength="15"
+           required>
+	       <div class="customError" 
+	            ng-if="userForm.city.$touched || userForm.$submitted" 
+	            ng-messages="userForm.city.$error">
+              <div ng-messages-include="templates/ng-messages.html"></div>
+           </div>
 	    </div>
 	    <div>&nbsp;</div>
-	    <div class="col-md-6">
+	    <div class="col-md-6 form-group">
 	      <label class="toOrange">Company</label><small class="toOrange"> *</small>
 	      <input 
 	        class="form-control" 
+	        name="company"
 	        id="company"
 	        ng-model="UserFactory.model.company"
-	        placeholder="company">
+	        placeholder="company"
+	        ng-minlength="6"
+            ng-maxlength="15"
+            required>
+	       <div class="customError" 
+	            ng-if="userForm.company.$touched || userForm.$submitted" 
+	            ng-messages="userForm.company.$error">
+              <div ng-messages-include="templates/ng-messages.html"></div>
+           </div>
 	    </div>
 	    <div class="col-md-6">
 	      <label class="toOrange">Zip</label> <small class="toOrange"> (Optional)</small>
@@ -74,15 +121,14 @@
 	       placeholder="zip">
 	    </div>
 	    <div>&nbsp;</div>
-	    <div class="col-md-3">
+	    <div class="col-md-12">
 	        <button  
-	         class="btn btn-info" 
-	         ng-click="UserFactory.submitUser()">Add
+	         class="btn btn-info">Add
 	        </button> 
   </div> 
 	</div>
   </div>
-  </fieldset>
+  </form>
 </div>
 <div ng-switch-when="userFormAdded">
   <div ng-include="'templates/info3.html'"></div>

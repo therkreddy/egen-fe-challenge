@@ -83,3 +83,7 @@ hr.customeTwo {
 .customSize {
 	font-size: 30px;
 }
+
+.customError {
+	color:rgb(222, 67, 67);
+}
