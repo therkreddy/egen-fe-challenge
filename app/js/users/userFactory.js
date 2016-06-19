@@ -23,12 +23,20 @@
          });
       };
 
-       proto.getUser = function(id) {
-         ApiResource.queryUser(id).then(function(response) {
+      proto.getUser = function(user) {
+         ApiResource.queryUser(user.id).then(function(response) {
          self.model.user = response.data;
+         proto.getUserDetail();
          }, function(response) {
          $log.error('User detail not found', response);
          });
+      };
+
+      proto.getUserDetail = function() {
+         self.model.user.name = self.model.user.firstName + ' ' + self.model.user.lastName;
+         self.model.user.address = self.model.user.address.street + ' ,' + self.model.user.address.city + ' ,' +
+         self.model.user.address.zip + ' ,' + self.model.user.address.state + ' ,' + self.model.user.address.country;
+         self.model.user.company = self.model.user.company.name + '- ' + self.model.user.company.website;
       };
 
       proto.addUser = function(payload) {
@@ -51,6 +59,19 @@
          $log.error('User detail not deleted', response);
          });
       };
+
+      proto.gotoUserRegister = function() {
+        self.state.go('register');
+      };
+
+      proto.gotoUsersList = function() {
+        self.state.go('users');
+      }
+
+      proto.goToUserDetail = function(user) {
+        proto.getUser(user);
+        self.state.go('userDetail');
+      }
        
       proto.submitUser = function() {
         var payload = proto.buildPayload();

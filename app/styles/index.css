@@ -2,23 +2,19 @@ body {
     background-color: white;
 }
 
-.firstSection{
-	background-image: url('../images/farmwall.jpg');
-	background-size: cover;
-    height: auto;
-    width: auto;
-}
-
 .header{
-	background-color: #F8F8FF;
+	background-color: #f2f2f2;
 }
 
+.userSection{
+	background-color:#f2f2f2;
+}
 .btn:hover, .navbtn:hover, .btn:focus, .navbtn:focus, .btn:active , navbtn:active{
   background-color: #ff6600;
   color:white;
 }
 
-.btn{
+.btn, .btn-info:hover{
 	background-color:white;
 	color:#ff6600;
 }
@@ -27,12 +23,18 @@ body {
 	color:#ff6600;
 }
 
+.btn-info{
+	background-color: #ff6600;
+    color:white;
+}
+
 .btn-success {
 	color:#ff6600;
 }
 
 .navbtn{
 	color:#ff6600;
+	font-size: 25px;
 }
 
 p.info{
@@ -40,10 +42,16 @@ p.info{
 	font-weight: bold;
 }
 
-img.gifimage{
-	height: 60%;
-	width: 20%;
-    border:1px solid gray;
+img.customImage{
+	height: 50px;
+	width: 50px;
+    border:1px solid #ff6600;
+}
+
+img.customImage2{
+	height: 400%;
+	width: 120%;
+    border:1px solid #ff6600;
 }
 
 span.highlight {
@@ -57,6 +65,21 @@ span.highlighth4 {
 	font-size: 20;
 }
 
-span.highlighth1 {
+span.highlighth1, .toOrange{
 	color: 	#ff6600;
+}
+
+hr.customOne {
+    border: 1px solid #ff6600;
+    height: 1px;
+}
+
+hr.customeTwo {
+	border: 0;
+    border-bottom: 1px dashed #ff6600;
+    background: #ff6600;
+}
+
+.customSize {
+	font-size: 30px;
 }

@@ -1,0 +1,51 @@
+<div class="panel-body container">
+  <div class="col-md-9 toOrange customSize">
+	  <span class="navbtn"><strong>User Details</strong></span>
+  </div>  
+  <div class="col-md-3">
+	  <button  
+	        class="btn btn-info" 
+	        ng-click="UserFactory.gotoUsersList()">&lt; Back
+	  </button> 
+  </div>        
+</div>
+<div class="panel-body container userSection">
+  <div class="col-xs-9 form-group panel-body animated rubberBand">
+    <div class="row">
+	    <div class="col-md-6">
+	      <div>
+	         &nbsp;
+	      </div>
+	      <div>
+	        <label class="toOrange">Name</label></br>
+	        {{UserFactory.model.user.name | dataFilter}}
+	      </div>
+	      <div>&nbsp;</div>
+	      <div>
+	        <label class="toOrange">Email</label></br>
+	        {{UserFactory.model.user.email | dataFilter}}
+	      </div>
+	      <div>&nbsp;</div>
+	      <div>
+	        <label class="toOrange">Address</label></br>
+	        {{UserFactory.model.user.address | dataFilter}}
+	      </div>
+	      <div>&nbsp;</div>
+	      <div>
+	        <label class="toOrange">Company</label></br>
+	        {{UserFactory.model.user.company | dataFilter}}
+	      </div>
+	      <div>&nbsp;</div>
+	    </div>
+	    <div class="col-md-6">
+	      <img class="customImage2" src="{{UserFactory.model.user.profilePic | dataFilter}}"/>
+	    </div>
+	</div>
+	<div>
+	   <button  
+	        class="btn btn-info" 
+	        ng-click=""> Delete User
+	  </button> 
+	</div>
+  </div>
+</div>

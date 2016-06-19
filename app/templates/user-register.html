@@ -1,0 +1,85 @@
+<div class="panel-body container">
+  <div class="col-md-9 toOrange customSize">
+	  <span class="navbtn"><strong>Add User</strong></span>
+  </div>  
+  <div class="col-md-3">
+	  <button  
+	        class="btn btn-info" 
+	        ng-click="UserFactory.gotoUsersList()">&lt; Back
+	  </button> 
+  </div>        
+</div>
+<div class="panel-body container userSection">
+  <fieldset class="panel-body animated rubberBand">
+  <div class="col-xs-8 form-group">
+    <div class="row">
+	    <div class="col-md-6">
+	      <label class="toOrange">First Name</label> <small class="toOrange"> *</small>
+	      <input 
+	        class="form-control" 
+	        id="firstname"
+	        ng-model="UserFactory.model.firstName"
+	        placeholder="First Name">
+	    </div>
+	    <div class="col-md-6">
+	      <label class="toOrange">Last Name</label> <small class="toOrange"> *</small>
+	      <input 
+	       class="form-control" 
+	       id="lastName"
+	       ng-model="UserFactory.model.lastName"
+	       placeholder="Last Name">
+	    </div>
+	    <div>&nbsp;</div>
+	<div class="col-md-12">
+	      <label class="toOrange">Email</label> <small class="toOrange"> *</small>
+	      <input 
+	       class="form-control" 
+	       id="Email"
+	       ng-model="UserFactory.model.email"
+	       placeholder="Email">
+	</div> 
+	<div>&nbsp;</div>	
+	   <div class="col-md-6">
+	      <label class="toOrange">StreetAddress</label> <small class="toOrange"> (Optional)</small>
+	      <input 
+	        class="form-control" 
+	        id="street"
+	        ng-model="UserFactory.model.street"
+	        placeholder="First Name">
+	    </div>
+	    <div class="col-md-6">
+	      <label class="toOrange">City</label> <small class="toOrange"> *</small>
+	      <input 
+	       class="form-control" 
+	       id="city"
+	       ng-model="UserFactory.model.city"
+	       placeholder="City">
+	    </div>
+	    <div>&nbsp;</div>
+	    <div class="col-md-6">
+	      <label class="toOrange">Company</label><small class="toOrange"> *</small>
+	      <input 
+	        class="form-control" 
+	        id="company"
+	        ng-model="UserFactory.model.company"
+	        placeholder="company">
+	    </div>
+	    <div class="col-md-6">
+	      <label class="toOrange">Zip</label> <small class="toOrange"> (Optional)</small>
+	      <input 
+	       class="form-control" 
+	       id="zip"
+	       ng-model="UserFactory.model.zip"
+	       placeholder="zip">
+	    </div>
+	    <div>&nbsp;</div>
+	    <div class="col-md-3">
+	        <button  
+	         class="btn btn-info" 
+	         ng-click="UserFactory.addUser()">Add
+	        </button> 
+  </div> 
+	</div>
+  </div>
+  </fieldset>
+</div>

@@ -1,4 +1,50 @@
-<div class="container">
-  {{UserFactory.model.user}}
-  {{UserFactory.model.usersList}}
+<div class="panel-body container">
+  <div class="col-md-9 toOrange customSize">
+	  <span class="navbtn"><strong>Users</strong></span>
+  </div>  
+  <div class="col-md-3">
+	  <button  
+	        class="btn btn-info" 
+	        ng-click="UserFactory.gotoUserRegister()">+ Add User
+	  </button> 
+  </div>        
+</div>
+<div class="panel-body container userSection">
+	 <div class="row toOrange">
+	   <div class="col-md-1">
+	   </div>
+	   <div class="col-md-2">
+	    NAME
+	   </div>
+	   <div class="col-md-3">
+	    EMAIL
+	   </div>
+	   <div class="col-md-2">
+	    CITY
+	   </div>
+	   <div class="col-md-3">
+	    COMPANY
+	   </div>
+     </div>
+     <hr class="customOne"/>
+ <div ng-repeat="user in UserFactory.model.usersList">
+    <div class="row" ng-click="UserFactory.goToUserDetail(user)">
+	   <div class="col-md-1">
+	     <img class="img-circle customImage" src="{{user.profilePic}}"/>
+	   </div>
+	   <div class="col-md-2">
+	     {{user.firstName}}{{" "}}{{user.lastName}}
+	   </div>
+	   <div class="col-md-3">
+	     {{user.email}}
+	   </div>
+	   <div class="col-md-2">
+	    {{user.address.city}}
+	   </div>
+	   <div class="col-md-3">
+	    {{user.company.name}}
+	   </div>
+    </div>
+    <hr class="customeTwo"/>
+ </div>
 </div>

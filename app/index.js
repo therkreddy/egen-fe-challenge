@@ -5,7 +5,7 @@
   app.config(['$stateProvider', '$urlRouterProvider',
      function($stateProvider, $urlRouterProvider) {
       // routes
-      $urlRouterProvider.otherwise('home');
+      $urlRouterProvider.otherwise('users');
       $stateProvider
         .state('home', {
                   url: '/home',
@@ -20,6 +20,16 @@
          .state('users', {
                   url: '/users',
           templateUrl: './templates/users.html',
+          controller: 'UserController',
+        })
+        .state('register', {
+                  url: '/register',
+          templateUrl: './templates/user-register.html',
+          controller: 'UserController',
+        })
+        .state('userDetail', {
+                  url: '/userDetail',
+          templateUrl: './templates/userDetail.html',
           controller: 'UserController',
         })
     }
