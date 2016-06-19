@@ -33,10 +33,17 @@
       };
 
       proto.getUserDetail = function() {
-         self.model.user.name = self.model.user.firstName + ' ' + self.model.user.lastName;
-         self.model.user.address = self.model.user.address.street + ' ,' + self.model.user.address.city + ' ,' +
-         self.model.user.address.zip + ' ,' + self.model.user.address.state + ' ,' + self.model.user.address.country;
-         self.model.user.company = self.model.user.company.name + '- ' + self.model.user.company.website;
+         if(self.model.user.firstName && self.model.user.lastName) {
+           self.model.user.name = self.model.user.firstName + ' ' + self.model.user.lastName;
+         }
+         if(self.model.user.address && self.model.user.address.street && self.model.user.address.city && self.model.user.address.zip 
+            && self.model.user.address.state && self.model.user.address.country) {
+           self.model.user.address = self.model.user.address.street + ' ,' + self.model.user.address.city + ' ,' +
+           self.model.user.address.zip + ' ,' + self.model.user.address.state + ' ,' + self.model.user.address.country;
+           }
+         if(self.model.user.company && self.model.user.company.name && self.model.user.company.website) {
+           self.model.user.company = self.model.user.company.name + '- ' + self.model.user.company.website;
+         }
       };
 
       proto.addUser = function(payload) {
