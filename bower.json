@@ -27,6 +27,7 @@
     "titatoggle": "^1.2.9",
     "moment": "^2.13.0",
     "lodash": "^4.13.1",
-    "angular-messages": "^1.5.7"
+    "angular-messages": "^1.5.7",
+    "angular-mocks": "^1.5.7"
   }
 }
