@@ -1,3 +1,4 @@
+<div ng-switch="UserFactory.detailStatus">
 <div class="panel-body container">
   <div class="col-md-9 toOrange customSize">
 	  <span class="navbtn"><strong>Add User</strong></span>
@@ -9,7 +10,7 @@
 	  </button> 
   </div>        
 </div>
-<div class="panel-body container userSection">
+<div ng-switch-when="userFormShowing" class="panel-body container userSection">
   <fieldset class="panel-body animated rubberBand">
   <div class="col-xs-8 form-group">
     <div class="row">
@@ -76,10 +77,14 @@
 	    <div class="col-md-3">
 	        <button  
 	         class="btn btn-info" 
-	         ng-click="UserFactory.addUser()">Add
+	         ng-click="UserFactory.submitUser()">Add
 	        </button> 
   </div> 
 	</div>
   </div>
   </fieldset>
+</div>
+<div ng-switch-when="userFormAdded">
+  <div ng-include="'templates/info3.html'"></div>
+</div>
 </div>

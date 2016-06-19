@@ -30,8 +30,6 @@
          return promise;
       };  
       proto.addUser= function(payload) {
-         var payload = {};
-         payload.firstName = 'jk';
          var params = {
             method : "POST",
             data : payload,

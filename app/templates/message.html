@@ -1,5 +1,5 @@
 <div class="container">
-<fieldset class="panel-body animated rubberBand">
+<form name="userForm" novalidate class="panel-body animated rubberBand">
   <h4> <span class="highlighth4">Get in Touch </span> </br></h4>
   <div class="col-xs-5">
     <div class="checkbox checkbox-slider--c-weight checkbox-slider-md"> 
@@ -17,11 +17,17 @@
         placeholder="Name">
     </div>
     <div class="form-group">
-      <input 
-       class="form-control" 
-       id="email"
-       ng-model="HomeFactory.model.email"
-       placeholder="Email">
+      <input type="email" name="email" class="form-control" 
+                ng-model="HomeFactory.model.email"
+                ng-minlength="5"
+                ng-maxlength="20"
+                placeholder="Email"
+                required>
+                <div style="color:red" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
+                    <p ng-message="minlength">Your name is too short.</p> 
+                    <p ng-message="maxlength">Your name is too long.</p>
+                    <p ng-message="required">Your name is required.</p>
+                </div>
     </div>
     <div class="form-group">
       <input 
@@ -44,5 +50,5 @@
          ng-include="'templates/info1.html'"></div>
     </div>
   </div>
-</fieldset>
+</form>
 </div>

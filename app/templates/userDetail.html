@@ -1,3 +1,4 @@
+<div  ng-switch="UserFactory.detailStatus">
 <div class="panel-body container">
   <div class="col-md-9 toOrange customSize">
 	  <span class="navbtn"><strong>User Details</strong></span>
@@ -9,7 +10,7 @@
 	  </button> 
   </div>        
 </div>
-<div class="panel-body container userSection">
+<div ng-switch-when="userShowing" class="panel-body container userSection">
   <div class="col-xs-9 form-group panel-body animated rubberBand">
     <div class="row">
 	    <div class="col-md-6">
@@ -41,11 +42,24 @@
 	      <img class="customImage2" src="{{UserFactory.model.user.profilePic}}"/>
 	    </div>
 	</div>
-	<div>
-	   <button  
-	        class="btn btn-info" 
-	        ng-click=""> Delete User
-	  </button> 
+	<div class="row">
+	   <div class="col-md-2">
+		   <button  
+		        class="btn btn-info" 
+		        ng-click="UserFactory.deleteUser(UserFactory.model.user.id)"> Delete User
+		  </button> 
+	   </div>
+	   <div class="col-md-2">
+		   <button  
+		        ng-disabled= "true"
+		        class="btn btn-info" 
+		        ng-click="UserFactory.modifyUser(UserFactory.model.user)"> Edit User
+		  </button> 
+	   </div>
 	</div>
   </div>
+</div>
+<div ng-switch-when="userDeleted">
+  <div ng-include="'templates/info2.html'"></div>
+</div>
 </div>

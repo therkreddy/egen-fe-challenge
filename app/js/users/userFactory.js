@@ -48,6 +48,7 @@
 
       proto.addUser = function(payload) {
          ApiResource.addUser(payload).then(function(response) {
+          self.detailStatus = "userFormAdded";
          }, function(response) {
          $log.error('User detail not posted', response);
          });
@@ -62,12 +63,14 @@
 
       proto.deleteUser = function(id) {
          ApiResource.deleteUser(id).then(function(response) {
+          self.detailStatus = "userDeleted";
          }, function(response) {
          $log.error('User detail not deleted', response);
          });
       };
 
       proto.gotoUserRegister = function() {
+        self.detailStatus = "userFormShowing";
         self.state.go('register');
       };
 
@@ -76,6 +79,7 @@
       }
 
       proto.goToUserDetail = function(user) {
+        self.detailStatus = "userShowing";
         proto.getUser(user);
         self.state.go('userDetail');
       }
