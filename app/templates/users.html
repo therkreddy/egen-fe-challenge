@@ -36,13 +36,13 @@
 	     {{user.firstName}}{{" "}}{{user.lastName}}
 	   </div>
 	   <div class="col-md-3">
-	     {{user.email}}
+	     {{user.email | dataFilter}}
 	   </div>
 	   <div class="col-md-2">
-	    {{user.address.city}}
+	    {{user.address.city | dataFilter}}
 	   </div>
 	   <div class="col-md-3">
-	    {{user.company.name}}
+	    {{user.company.name | dataFilter}}
 	   </div>
     </div>
     <hr class="customeTwo"/>

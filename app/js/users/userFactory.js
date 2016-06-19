@@ -38,11 +38,11 @@
          }
          if(self.model.user.address && self.model.user.address.street && self.model.user.address.city && self.model.user.address.zip 
             && self.model.user.address.state && self.model.user.address.country) {
-           self.model.user.address = self.model.user.address.street + ' ,' + self.model.user.address.city + ' ,' +
+           self.model.user.addressDetail = self.model.user.address.street + ' ,' + self.model.user.address.city + ' ,' +
            self.model.user.address.zip + ' ,' + self.model.user.address.state + ' ,' + self.model.user.address.country;
            }
          if(self.model.user.company && self.model.user.company.name && self.model.user.company.website) {
-           self.model.user.company = self.model.user.company.name + '- ' + self.model.user.company.website;
+           self.model.user.companyDetail = self.model.user.company.name + '- ' + self.model.user.company.website;
          }
       };
 
