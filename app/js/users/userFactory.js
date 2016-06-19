@@ -1,4 +1,4 @@
-  app.factory('UserFactory', function($log, ApiResource) {
+  app.factory('UserFactory', function($log, $window, ApiResource) {
       // create a object using constructor function
       var UserFactory = function() {
       var self = this;  
@@ -62,11 +62,14 @@
       };
 
       proto.deleteUser = function(id) {
-         ApiResource.deleteUser(id).then(function(response) {
+        var confirmDeletion = $window.confirm('Are you sure you want to delete the user?');
+        if (confirmDeletion) {
+          ApiResource.deleteUser(id).then(function(response) {
           self.detailStatus = "userDeleted";
-         }, function(response) {
-         $log.error('User detail not deleted', response);
-         });
+          }, function(response) {
+          $log.error('User detail not deleted', response);
+          });
+         }
       };
 
       proto.gotoUserRegister = function() {
