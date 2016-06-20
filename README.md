@@ -20,3 +20,7 @@ For bower package manager : npm install bower
 Hitting this default command gulp or gulp rk will bring up the server
 
 * goto localhost:9090
+
+-- For Tests
+
+* Run Karma start from the terminal/console (karma start) // Injections not set up/missing
