@@ -3,6 +3,10 @@ var open = require('gulp-open');
 var os = require('os');
 var connect = require('gulp-connect');
 var runSequence = require('run-sequence');
+var concat = require('gulp-concat')
+var sourcemaps = require('gulp-sourcemaps')
+var uglify = require('gulp-uglify')
+var ngAnnotate = require('gulp-ng-annotate')
 
 //check browser version
 var browser = os.platform() === 'linux' ? 'google-chrome' : (
@@ -32,4 +36,15 @@ gulp.task('default', function() {
    console.log('.........Tasks lined up to run.......');
   runSequence('rk',
               ['openApp']);
+});
+
+//minify and concat
+gulp.task('build', function () {
+  gulp.src(['app/index.js','app/js/*.js'])
+    .pipe(sourcemaps.init())
+      .pipe(concat('app.js'))
+      .pipe(ngAnnotate())
+      .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('app/'))
 });
