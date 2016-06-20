@@ -9,9 +9,7 @@ For bower package manager : npm install bower
 
 * git clone https://github.com/therkreddy/egen-fe-challenge.git
 
-* cd myAgrotech
-
-CD into your myAgrotech project
+* cd egen-fe-challenge
 
 * npm install 
 
