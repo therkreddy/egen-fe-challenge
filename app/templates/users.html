@@ -1,13 +1,21 @@
 <div class="panel-body container">
-  <div class="col-md-9 toOrange customSize">
+  <div class="col-md-7 toOrange customSize">
 	  <span class="navbtn"><strong>Users</strong></span>
   </div>  
-  <div class="col-md-3">
+  <div class="col-md-2">
 	  <button  
 	        class="btn btn-info" 
-	        ng-click="UserFactory.gotoUserRegister()">+ Add User
+	        ng-click="UserFactory.gotoUserRegister()">+ Add User 
 	  </button> 
-  </div>        
+  </div>   
+  <div class="col-md-3"> 
+    <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+      </span>
+      <input type="search" data-ng-model="filterTerm" class="form-control" placeholder="Filter User on detail">  
+    </div>
+   </div>     
 </div>
 <div class="panel-body container userSection">
 	 <div class="row toOrange">
@@ -27,7 +35,7 @@
 	   </div>
      </div>
      <hr class="customOne"/>
- <div ng-repeat="user in UserFactory.model.usersList">
+ <div ng-repeat="user in UserFactory.model.usersList | filter:filterTerm">
     <div class="row selector" ng-click="UserFactory.goToUserDetail(user)">
 	   <div class="col-md-1">
 	     <img class="img-circle customImage" src="{{user.profilePic}}"/>
