@@ -87,3 +87,8 @@ hr.customeTwo {
 .customError {
 	color:rgb(222, 67, 67);
 }
+
+.selector
+{
+  cursor: pointer
+}

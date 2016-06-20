@@ -4,9 +4,6 @@
       var self = this;  
       var proto = HomeFactory.prototype;     
         // Attach methods to object
-       proto.goToContact = function() {
-          self.state.go('message');
-       };
        proto.contactSubmit = function() {
           self.model.contactSubmitted = true;
        }
