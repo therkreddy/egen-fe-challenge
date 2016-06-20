@@ -2,16 +2,18 @@
       // create a object using constructor function
       var UserFactory = function() {
       var self = this;  
+      self.detailStatus = "userFormShowing";
       var proto = UserFactory.prototype;
 
       proto.buildPayload = function() {
         var payload = {};
-        payload.firstName = self.model.firstName,
-        payload.lastName = self.model.lastName,
-        payload.email = self.model.email,
-        payload.address = self.model.address,
-        payload.company = self.model.company,
+        payload.firstName = self.model.firstName;
+        payload.lastName = self.model.lastName;
+        payload.email = self.model.email;
+        payload.address = self.model.city;
+        payload.company = self.model.company;
         payload.dateCreated = moment();
+        payload.profilePic = "http://lorempixel.com/640/480/people/";
         return payload;
       };
 

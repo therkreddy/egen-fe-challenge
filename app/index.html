@@ -11,12 +11,18 @@
     <link rel="stylesheet" href="bower_components/titatoggle/dist/titatoggle-dist.css">
     <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
     <link rel="stylesheet" href="styles/index.css"/>
+    <link rel="stylesheet" href="styles/drawer.css"/>
     <link rel="stylesheet" href="styles/font.css"/>
     <link rel="shortcut icon" href="images/apple-icon.png">
   </head>
   <body>
-      <div ng-include="'templates/header.html'"></div>
-      <div ui-view></div>
+     <div id="menuDrawer" class="menuDrawer">
+       <div ng-include="'templates/menu-drawer.html'"></div>
+     </div>
+      <div id="main">
+        <div ng-include="'templates/header.html'"></div>
+        <div ui-view></div>
+      </div>
     <!-- scripts -->
     <script src="bower_components/moment/min/moment.min.js"></script>
     <script src="bower_components/lodash/dist/lodash.min.js"></script>

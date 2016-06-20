@@ -2,16 +2,12 @@ body {
     background-color: white;
 }
 
-.header{
-	background-color: #f2f2f2;
-}
-
 .userSection{
 	background-color:#f2f2f2;
 }
-.btn:hover, .navbtn:hover, .btn:focus, .navbtn:focus, .btn:active , navbtn:active{
+.btn:hover, .navbtn:hover, .btn:focus, .navbtn:focus, .btn:active , .navbtn:active{
   background-color: #ff6600;
-  color:white;
+  color:#f2f2f2;
 }
 
 .btn, .btn-info:hover{
